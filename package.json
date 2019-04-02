@@ -1,8 +1,8 @@
 {
-    "name": "casper",
-    "description": "The default personal blogging theme for Ghost. Beautiful, minimal and responsive.",
-    "demo": "https://demo.ghost.io",
-    "version": "2.9.6",
+    "name": "og-kush",
+    "description": "The portfolio theme for Ghost that's a vibe",
+    "demo": "https://fredz.website",
+    "version": "0.0.1",
     "engines": {
         "ghost": ">=2.0.0",
         "ghost-api": "v2"
@@ -22,28 +22,31 @@
         "postship": "git fetch && gulp release"
     },
     "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org"
+        "name": "Fred Zaw",
+        "email": "fred.zaw@gmail.com",
+        "url": "http://fredz.website"
     },
     "gpm": {
         "type": "theme",
         "categories": [
             "Minimal",
-            "Magazine"
+            "Magazine",
+            "Portfolio",
+            "Brutalist"
         ]
     },
     "keywords": [
         "ghost",
         "theme",
-        "ghost-theme"
+        "ghost-theme",
+        "portfolio"
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/TryGhost/Casper.git"
+        "url": "https://github.com/infredible/og-kush"
     },
-    "bugs": "https://github.com/TryGhost/Casper/issues",
-    "contributors": "https://github.com/TryGhost/Casper/graphs/contributors",
+    "bugs": "https://github.com/infredible/og-kush/issues",
+    "contributors": "https://github.com/infredible/og-kush/graphs/contributors",
     "devDependencies": {
         "@tryghost/release-utils": "0.3.1",
         "autoprefixer": "9.5.0",
