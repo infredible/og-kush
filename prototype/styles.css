@@ -3,6 +3,7 @@ html, body {
   color: #222425;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 h2 {
@@ -14,12 +15,26 @@ h2 {
 
 a {
   text-decoration: none;
+  color: #A4B1B6;
+  -o-transition:       .1s ease-out;
+  -ms-transition:      .1s ease-out;
+  -moz-transition:     .1s ease-out;
+  -webkit-transition:c .1s ease-out;
+  transition:          .1s ease-out;
+}
+
+a:hover {
+  color: #CA08CC;
 }
 
 ul {
   padding: 0;
   list-style: none;
 }
+
+
+
+/* Hero Image */
 
 .hero-text {
   position: absolute;
@@ -49,20 +64,55 @@ ul {
 /* Nav Bar */
 
 .nav-bar {
-  width: 100%;
   display: flex;
   font-weight: 800;
   text-transform: uppercase;
   font-size: 14px;
+  padding: 12px 24px;
+  align-items: center;
 }
 
-.logo {
+.nav-bar li:not(:last-child):not(.logo):not(.phone) {
+  padding-right: 16px;
+}
+
+/* .logo {
   margin-left: auto;
   margin-right: auto;
+} */
+
+.nav-section {
+  display: flex;
+  flex: 1;
+}
+
+.center {
+  justify-content: center;
+}
+
+.right {
+  justify-content: flex-end;
+}
+
+.logo a {
+  color: #222425;
 }
 
 .phone {
   color: #CA08CC;
+  -webkit-animation: flash linear 0.8s infinite;
+  animation:         flash linear 0.8s infinite;
+}
+
+@-webkit-keyframes flash {
+	0% { opacity: 1; }
+	50% { opacity: .6; }
+	100% { opacity: 1; }
+}
+@keyframes flash {
+	0% { opacity: 1; }
+	50% { opacity: .1; }
+	100% { opacity: 1; }
 }
 
 
@@ -91,6 +141,7 @@ ul {
 }
 
 .menu {
+  max-width: 1016px;
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
@@ -125,4 +176,56 @@ ul {
 .menu__link span,
 .quote__link span {
 	display: inline-block;
+}
+
+@media (max-width: 1016px) {
+
+/* Nav Bar */
+
+.nav-bar {
+  flex-direction: column;
+}
+
+.nav-bar .logo {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.content {
+  top: 640px;
+}
+
+.menu a {
+  font-size: 80px;
+  line-height: 94px;
+}
+
+}
+
+
+@media (max-width: 670px) {
+
+  .hero-text {
+    width: 360px;
+    top: 142px;
+    left: calc(50% - 360px/2);
+  }
+
+  h2 {
+    font-size: 30px
+  }
+
+  .content {
+    top: 620px;
+  }
+
+  .menu-header {
+    height: 90px;
+  }
+
+  .menu a {
+  	font-size: 42px;
+    line-height: 56px;
+  }
+
 }

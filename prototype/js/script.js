@@ -52,8 +52,6 @@ class Interact {
             ease: Expo.ease
 
         })
-
-        console.log(Math.round(this.cxPoint, this.cyPoint));
     }
 }
 
@@ -106,8 +104,6 @@ class Application {
             if (this.count > this.images.length - 1) {
                 this.count = 0;
             }
-
-            console.log(this.count)
 
         }, 500)
         this.container.addEventListener('mouseenter', (e) => this.animateContainer(e))
