@@ -1,16 +1,15 @@
 {
     "name": "og-kush",
-    "description": "The portfolio theme for Ghost that's a vibe",
+    "description": "Personal portfolio theme for ghost",
     "demo": "https://fredz.website",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "engines": {
         "ghost": ">=2.0.0",
         "ghost-api": "v2"
     },
     "license": "MIT",
     "screenshots": {
-        "desktop": "assets/screenshot-desktop.jpg",
-        "mobile": "assets/screenshot-mobile.jpg"
+        "desktop": "assets/screenshot-desktop.jpg"
     },
     "scripts": {
         "dev": "gulp",
@@ -18,53 +17,49 @@
         "test": "gscan .",
         "pretest": "gulp build",
         "preship": "yarn test",
-        "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; else echo \"Uncomitted changes found.\" && exit 1; fi",
-        "postship": "git fetch && gulp release"
+        "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; fi"
     },
     "author": {
         "name": "Fred Zaw",
         "email": "fred.zaw@gmail.com",
-        "url": "http://fredz.website"
+        "url": "https://fredz.website"
     },
     "gpm": {
         "type": "theme",
         "categories": [
             "Minimal",
-            "Magazine",
-            "Portfolio",
-            "Brutalist"
+            "Magazine"
         ]
     },
     "keywords": [
         "ghost",
         "theme",
-        "ghost-theme",
-        "portfolio"
+        "ghost-theme"
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/infredible/og-kush"
+        "url": "https://github.com/infredible/og-kush.git"
     },
     "bugs": "https://github.com/infredible/og-kush/issues",
     "contributors": "https://github.com/infredible/og-kush/graphs/contributors",
     "devDependencies": {
-        "@tryghost/release-utils": "0.3.1",
-        "autoprefixer": "9.5.0",
-        "beeper": "1.1.1",
+        "autoprefixer": "9.4.10",
         "cssnano": "4.1.10",
-        "gscan": "2.3.0",
+        "gscan": "^2.0.0",
         "gulp": "4.0.0",
         "gulp-livereload": "4.0.1",
         "gulp-postcss": "8.0.0",
+        "gulp-sourcemaps": "2.6.5",
         "gulp-uglify": "3.0.2",
+        "gulp-util": "3.0.8",
+        "gulp-watch": "5.0.1",
         "gulp-zip": "4.2.0",
         "postcss-color-function": "4.0.1",
         "postcss-custom-properties": "8.0.9",
-        "postcss-easy-import": "3.0.0",
-        "pump": "3.0.0"
+        "postcss-easy-import": "3.0.0"
     },
     "config": {
-        "posts_per_page": 25,
+        "posts_per_page": 15,
         "image_sizes": {
             "xxs": {
                 "width": 30
@@ -79,7 +74,7 @@
                 "width": 600
             },
             "l": {
-                "width": 1000
+                "width": 1200
             },
             "xl": {
                 "width": 2000
