@@ -13,40 +13,26 @@
 
     {{!-- Styles'n'Scripts --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
-
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
 
 </head>
 <body class="{{body_class}}">
 
+{{!-- Top Navigation Bar --}}
 <div class="site-wrapper">
-
-    <header class="site-head">
-        <div class="site-head-container">
-            <nav id="swup" class="site-head-left">
-                {{navigation}}
-            </nav>
-            <div class="site-head-center">
-                {{#if @site.logo}}
-                <a class="site-head-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
-                {{else}}
-                <a class="site-head-logo" href="{{@site.url}}">{{@site.title}}</a>
-                {{/if}}
-            </div>
-            <div class="site-head-right">
-                <div class="social-links">
-                    {{#if @site.facebook}}
-                    <a href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">Facebook</a>
-                    {{/if}}
-                    {{#if @site.twitter}}
-                    <a href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">Twitter</a>
-                    {{/if}}
-                    <a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">RSS</a>
-                </div>
-            </div>
-        </div>
-    </header>
+    <ul class="nav-bar">
+      <div class="nav-section">
+          {{navigation}}
+      </div>
+      <div class="nav-section center">
+        <li class="logo"><a href="#">Fred Zaw</a></li>
+      </div>
+      <div class="nav-section right">
+        <li class="phone">For more info: text 510-555-4021</li>
+      </div>
+    </ul>
 
     <main id="site-main" class="site-main">
 
@@ -55,18 +41,7 @@
 
     </main>
 
-    {{!-- The footer at the very bottom of the screen --}}
-    <footer class="site-foot">
-        &copy; {{date format="YYYY"}} <a href="{{@site.url}}">{{@site.title}}</a> &mdash; Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
-    </footer>
-
 </div>
-
-<script
-    src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous">
-</script>
 
 {{#if pagination.pages}}
 <script>
@@ -75,14 +50,14 @@
     // we reached the last page already.
     var maxPages = parseInt('{{pagination.pages}}');
 </script>
-<script src="{{asset "built/infinitescroll.js"}}"></script>
 {{/if}}
 
 {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
+<script src="{{asset "js/hero.js"}}"></script>
+<script src="{{asset "js/project-menu.js"}}"></script>
+<script src="{{asset "js/TweenMax.min.js"}}"></script>
+<script src="{{asset "built/pixi.min.js"}}"></script>
 {{{block "scripts"}}}
-
-{{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
-{{ghost_foot}}
 
 </body>
 </html>

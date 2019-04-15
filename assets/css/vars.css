@@ -25,6 +25,10 @@
     --small: 740px;
     --xsmall: 480px;
 
+    --tablet: 1016px;
+    --phone: 670px;
+
+
     /* Sizes */
     --height: 4rem;
     --margin: 2rem;
