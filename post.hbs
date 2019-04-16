@@ -3,47 +3,44 @@
 {{#post}}
 <article class="post-content {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
 
-    <header class="post-content-header">
+    <header class="post-column">
         <h1 class="post-content-title">{{title}}</h1>
     </header>
 
     {{#if custom_excerpt}}
-        <p class="post-content-excerpt">{{custom_excerpt}}</p>
+        <div class="post-column">
+          <p class="post-content-excerpt">{{custom_excerpt}}</p>
+        </div>
     {{/if}}
 
     {{#if feature_image}}
-    <div class="post-content-image">
-        <img class="kg-image" src="{{feature_image}}" alt="{{title}}" />
+    <div class="post-column">
+      <div class="post-content-image">
+          <img class="kg-image" src="{{feature_image}}" alt="{{title}}" />
+      </div>
     </div>
     {{/if}}
 
-    <div class="post-content-body">
-        {{content}}
+    <div class="post-column">
+      <div class="post-content-body">
+          {{content}}
+      </div>
     </div>
 
-    {{!-- Email subscribe form at the bottom of the page --}}
-    {{#if @labs.subscribers}}
-    <section class="subscribe-form">
-        <h3 class="subscribe-form-title">Subscribe to {{@site.title}}</h3>
-        <p>Get the latest posts delivered right to your inbox</p>
-        {{subscribe_form placeholder="youremail@example.com"}}
-    </section>
-    {{/if}}
+  <div class="post-endmark">
+    <span class="dot"></span>
+  </div>
 
-    <footer class="post-content-footer">
+  <!-- {{#get "posts" limit="3"}}
+      <nav class="menu">
+        <span class="menu-header">Here's some work</span>
+        {{#foreach posts}}
+          <a href="{{url}}" class="menu__link">{{title}}</a>
+        {{/foreach}}
+      </nav>
+  {{/get}} -->
 
-        {{!-- There are two options for how we display the byline/author-info.
-        If the post has more than one author, we load a specific template
-        from includes/byline-multiple.hbs, otherwise, we just use the
-        default byline. --}}
 
-    </footer>
-
-    {{!--
-    <section class="post-content-comments">
-        If you want to embed comments, this is a good place to do it!
-    </section>
-    --}}
 
 </article>
 {{/post}}
