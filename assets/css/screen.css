@@ -12,7 +12,6 @@ production stylesheet in assets/built/screen.css using gulp dev
 @import "components/global.css";
 @import "components/ghost.css";
 @import "components/lists.css";
-@import "components/grid.css";
 @import "components/tables.css";
 @import "components/forms.css";
 @import "components/buttons.css";
@@ -144,7 +143,7 @@ ul {
 }
 @keyframes flash {
 	0% { opacity: 1; }
-	50% { opacity: .1; }
+	50% { opacity: .6; }
 	100% { opacity: 1; }
 }
 
@@ -175,6 +174,17 @@ ul {
     top: 140px;
     width: 670px;
 	  height: 465px;
+    -webkit-animation: fadeHero ease-in 1.2s;
+    animation:         fadeHero ease-in 1.2s;
+}
+
+@-webkit-keyframes fadeHero {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+@keyframes fadeHero {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
 }
 
 .hero-text h2 {
@@ -193,7 +203,7 @@ ul {
   top: 745px;
 	justify-content: flex-start;
 	align-items: center;
-  margin-bottom: calc(40vh);
+  margin-bottom: calc(20vh);
 }
 
 .distort {
@@ -217,6 +227,17 @@ ul {
 	font-weight: 800;
 	margin-top: 0;
   text-transform: uppercase;
+  -webkit-animation: fadeMenu ease-in .4s;
+  animation:         fadeMenu ease-in .4s;
+}
+
+@-webkit-keyframes fadeMenu {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+@keyframes fadeMenu {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
 }
 
 .menu-header {
@@ -251,19 +272,6 @@ ul {
 .post-content {
   padding-left: 40px;
   padding-right: 40px;
-  -webkit-animation: blink ease-in 1s;
-  animation:         blink ease-in 1s;
-}
-
-@-webkit-keyframes blink {
-	0% { color: #FFF; }
-	25% { color: var(--color-fuschia); }
-  100% { color: var(--color-base); }
-}
-@keyframes blink {
-  0% { color: #FFF; }
-	25% { color: var(--color-fuschia); }
-  100% { color: var(--color-base); }
 }
 
 .post-column {

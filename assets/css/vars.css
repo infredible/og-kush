@@ -4,16 +4,16 @@
 :root {
 
     /* Colours */
-    --color-primary: #3eb0ef;
+    --color-primary: #CA08CC;
     --color-base: #222425;
-    --color-border: #ddd;
+    --color-border: #A4B1B6;
     --color-bg: #FFFFFF;
     --color-fuschia: #CA08CC;
     --color-light-grey: #A4B1B6;
     --color-dark-grey: #86969B;
 
     /* Fonts */
-    --font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    --font-sans-serif: 'Open Sans', sans-serif;
     --font-serif: Georgia, Times, serif;
     --font-mono: Menlo, Courier, monospace;
     --font-light: 100;

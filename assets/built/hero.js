@@ -1,7 +1,3 @@
-// Clear the console
-console.clear();
-
-
 // Mouse Interaction Class
 class Interact {
     constructor(elem, ease) {
@@ -68,6 +64,7 @@ class Application {
         this.container = document.querySelector(container);
         this.width = 670;
         this.height = 465;
+
 
         this.renderer = new PIXI.autoDetectRenderer(this.width, this.height, {
             transparent: true,
@@ -147,6 +144,4 @@ window.onload = () => {
 
 function animate() {
     requestAnimationFrame(animate);
-
-    // console.log(lerp(1, 100, 1))
 }
