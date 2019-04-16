@@ -28,6 +28,7 @@ Homepage Hero
 Homepage Project Menu
 Post
 404
+Page
 Responsive Styles
 
 /* ---------------------------------------------------------- */
@@ -74,6 +75,12 @@ a:hover {
   color: var(--color-fuschia);
   text-decoration: none;
 
+}
+
+.big-link {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
 ul {
@@ -222,14 +229,14 @@ ul {
 .menu__link,
 .quote__link {
 	z-index: 999;
-	color: var(--color-content-link);
+	color: var(--color-base);
 	position: relative;
   white-space: nowrap;
 }
 
 .menu__link:hover,
 .quote__link:hover {
-	color: var(--color-content-link-hover);
+	color: var(--color-fuschia);
 }
 
 .menu__link span,
@@ -244,6 +251,19 @@ ul {
 .post-content {
   padding-left: 40px;
   padding-right: 40px;
+  -webkit-animation: blink ease-in 1s;
+  animation:         blink ease-in 1s;
+}
+
+@-webkit-keyframes blink {
+	0% { color: #FFF; }
+	25% { color: var(--color-fuschia); }
+  100% { color: var(--color-base); }
+}
+@keyframes blink {
+  0% { color: #FFF; }
+	25% { color: var(--color-fuschia); }
+  100% { color: var(--color-base); }
 }
 
 .post-column {
@@ -307,10 +327,14 @@ ul {
   margin: 0 0 1em 0;
 }
 
-.error-message a {
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: 14px;
+/* Page
+/* ---------------------------------------------------------- */
+
+.page-content {
+  flex-direction: column;
+  text-align: center;
+  max-width: 670px;
+  margin-top: 18vh;
 }
 
 
