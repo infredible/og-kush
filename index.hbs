@@ -17,6 +17,8 @@ into the {body} of the default.hbs template --}}
       <feTurbulence type="turbulence" baseFrequency="0.02 0.01" numOctaves="5" seed="2" stitchTiles="stitch" x="0%" y="0%" width="100%" height="100%" result="noise"/>
       <feDisplacementMap in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="B" x="0%" y="0%" width="100%" height="100%" filterUnits="userSpaceOnUse"/>
     </filter>
+
+    <!-- This only works when all images are the same file format -->
     <g filter="url(#distortionFilter)">
       {{#foreach posts}}
         <image class="distort__img" x="50" y="50" xlink:href="{{img_url feature_image size="m" }}" width="800" height="600"/>
