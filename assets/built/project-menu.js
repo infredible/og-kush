@@ -33,7 +33,7 @@
 
     // Window size
     let winsize;
-    const calcWinsize = () => winsize = {width: window.innerWidth, height: document.documentElement.scrollHeight - 200};
+    const calcWinsize = () => winsize = {width: window.innerWidth, height: document.documentElement.scrollHeight};
     calcWinsize();
     window.addEventListener('resize', calcWinsize);
 
