@@ -310,7 +310,7 @@ article img {
   max-width: 100%;
 }
 
-.kg-width-wide img {
+.kg-width-wide img, .kg-gallery-row {
   max-width: 85vw;
 }
 
@@ -339,6 +339,10 @@ article img {
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   transform: translateX(calc(50vw - 50%));
+}
+
+.kg-gallery-container {
+  align-items: center;
 }
 
 .post-hero-image {
@@ -459,10 +463,8 @@ article {
   height: auto;
 }
 
-
-.post-hero-image, .kg-width-wide img {
+.kg-gallery-row {
   max-width: 100vw;
-  padding: 0 40px;
 }
 
 }

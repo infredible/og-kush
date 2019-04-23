@@ -1,10 +1,22 @@
-# Ghost Starter Theme
+# Ghost theme for my personal portfolio
 
 A starter framework for Ghost themes! Fork this repository and start your development here with all the main things you need to develop a custom Ghost theme.
 
 &nbsp;
 
-# First time using a Ghost theme?
+# Notes
+
+- All feature image file formats must be the same. Otherwise, rendering issues may occur.
+- Code blocks are not properly styled and will require work if you're planning to include code blocks in posts.
+- Gulp breaks with some of the JS files, so they were manually included in the 'build' folder
+
+# Potential Improvements
+
+- Include links to other projects at the bottom of posts
+- Figure out how to make post images responsive using Ghost's multiple image sizes
+- The Javascript is handled in a very messy way right now, files could be consolidated
+
+# Ghost Reference
 
 Ghost uses a simple templating language called [Handlebars](http://handlebarsjs.com/) for its themes.
 
