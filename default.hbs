@@ -52,10 +52,6 @@
 {{/if}}
 
 {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
-<script src="{{asset "built/hero.js"}}"></script>
-<script src="{{asset "built/project-menu.js"}}"></script>
-<script src="{{asset "js/TweenMax.min.js"}}"></script>
-<script src="{{asset "built/pixi.min.js"}}"></script>
 {{{block "scripts"}}}
 
 </body>

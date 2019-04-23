@@ -1,48 +1,51 @@
 {{!< default}}
 
 {{#post}}
-<article class="post-content {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
+<div class="post-content">
+  <article class="{{post_class}} {{#unless feature_image}}no-image{{/unless}}">
 
-    <header class="post-column">
-        <h1 class="post-content-title">{{title}}</h1>
-    </header>
+      <header>
+          <h1 class="post-content-title">{{title}}</h1>
+      </header>
 
-    {{#if custom_excerpt}}
-        <div class="post-column">
-          <p class="post-content-excerpt">{{custom_excerpt}}</p>
-        </div>
-    {{/if}}
+      {{#if custom_excerpt}}
+      <p class="post-content-excerpt">{{custom_excerpt}}</p>
+      {{/if}}
 
-    {{#if feature_image}}
-    <div class="post-column">
-      <div class="post-content-image">
-          <img class="kg-image" src="{{feature_image}}" alt="{{title}}" />
-      </div>
+      {{#if feature_image}}
+      <figure class="post-hero-image">
+          <img
+            class="kg-image"
+            srcset="{{img_url feature_image size="s"}} 300w,
+            {{img_url feature_image size="m"}} 600w,
+            {{img_url feature_image size="l"}} 1000w,
+            {{img_url feature_image size="xl"}} 2000w"
+            sizes="(max-width: 800px) 400px,
+                    (max-width: 1170px) 700px,
+                    1400px"
+            src="{{img_url feature_image size="xl"}}"
+            alt="{{title}}"
+          />
+      </figure>
+      {{/if}}
+
+      {{content}}
+
+    <div class="post-endmark">
+      <span class="dot"></span>
     </div>
-    {{/if}}
 
-    <div class="post-column">
-      <div class="post-content-body">
-          {{content}}
-      </div>
-    </div>
+    <!-- {{#get "posts" limit="3"}}
+        <nav class="menu">
+          <span class="menu-header">Here's some work</span>
+          {{#foreach posts}}
+            <a href="{{url}}" class="menu__link">{{title}}</a>
+          {{/foreach}}
+        </nav>
+    {{/get}} -->
 
-  <div class="post-endmark">
-    <span class="dot"></span>
-  </div>
-
-  <!-- {{#get "posts" limit="3"}}
-      <nav class="menu">
-        <span class="menu-header">Here's some work</span>
-        {{#foreach posts}}
-          <a href="{{url}}" class="menu__link">{{title}}</a>
-        {{/foreach}}
-      </nav>
-  {{/get}} -->
-
-
-
-</article>
+  </article>
+</div>
 {{/post}}
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
