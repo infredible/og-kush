@@ -27,9 +27,13 @@ into the {body} of the default.hbs template --}}
   </svg>
   <nav class="menu">
     <span class="menu-header">Here's some work</span>
-    {{#foreach posts}}
-      <a href="{{url}}" class="menu__link">{{title}}</a>
-    {{/foreach}}
+    <div class="menu-items">
+      {{#foreach posts}}
+        <a href="{{url}}" class="menu__link">{{title}}</a>
+      {{/foreach}}
+    </div>
+    {{> "footer"}}
+
   </nav>
 </div>
 </div>
